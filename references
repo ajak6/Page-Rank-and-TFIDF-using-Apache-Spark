@@ -1,0 +1,4 @@
+https://spark.apache.org/docs/1.0.0/api/java/org/apache/spark/api/java/JavaPairRDD.html#subtract(org.apache.spark.api.java.JavaPairRDD)
+http://stackoverflow.com/questions/24048729/how-to-read-input-from-s3-in-a-spark-streaming-ec2-cluster-application
+http://stackoverflow.com/questions/15506540/java-regex-to-strip-out-xml-tags-is-not-working
+https://github.com/apache/spark/tree/master/examples/src/main/java/org/apache/spark/examples
