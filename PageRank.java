@@ -120,7 +120,7 @@ public class PageRank {
      
       final Accumulator<Double> accum = spark.accumulator(0.0);
       JavaRDD<Double> danlingRanks = danglingMap.values();
-      // sum all valuse of danling ranks and add them to everyone
+      // sum all value of danling ranks and add them to everyone
       
       Double sum = danlingRanks
           .reduce(new Function2<Double, Double, Double>() {
@@ -147,12 +147,7 @@ public class PageRank {
           .join(ranks);
       
       // update with new ranks of dangling vertex
-      // if 7 is in dangling and is present in map and does not
-      // have anyone pointing to it newRanks will return null
-      // which breaks the logic: handle the null values or remove
-      // such nodes from dangling list. first pass will tell you
-      // which nodes does not have any incoming links also remove
-      // them from dangling map and everything is win win.
+      
       danglingMap = dangOldNew
           .mapToPair(new PairFunction<Tuple2<String, Tuple2<Double, Double>>, String, Double>() {
             public Tuple2<String, Double> call(
